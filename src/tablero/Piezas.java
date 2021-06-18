@@ -1,4 +1,4 @@
-package tablero;
+package src.tablero;
 
 public class Piezas {
     

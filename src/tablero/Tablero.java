@@ -1,9 +1,9 @@
-package tablero;
+package src.tablero;
 
 public class Tablero {
     
     //Atributos
-    private String[][] tablero = new String[5][5];
+    private String[][] tablero = new String[8][8];
 
 
     //Contructor
@@ -13,9 +13,23 @@ public class Tablero {
     //Metodos
     public void pintarTablero(){
         for (int i = 0; i < tablero.length; i++) {
-            System.out.println((i+1) + "|     |");
+            System.out.println("");
             for (int j = 0; j < tablero[i].length; j++) {
-                System.out.print("|     |");
+                int par1 = j%2;
+                int par2 = i%2;
+                if (par2 == 0) {
+                    if (par1 != 0) {
+                        System.out.print("\u001B[47m" +"     " + "\u001B[0m");
+                    } else {
+                        System.out.print("     ");
+                    }
+                } else {
+                    if (par1 == 0) {
+                        System.out.print("\u001B[47m" +"     " + "\u001B[0m");
+                    } else {
+                        System.out.print("     ");
+                    }
+                }
             }
         }
     }
