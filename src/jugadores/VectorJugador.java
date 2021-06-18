@@ -58,4 +58,6 @@ public class VectorJugador {
     public int getJugador2seleccionado() {
         return jugador2seleccionado;
     }
+    
+    
 }
