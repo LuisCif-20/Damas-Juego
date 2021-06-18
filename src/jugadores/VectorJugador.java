@@ -30,8 +30,7 @@ public class VectorJugador {
     public void escogerPrimerJugador(){
         int seleccion = aleatorio.nextInt(5);
         jugador1seleccionado = seleccion;
-        System.out.print("El primer jugador seleccionado es el: ");
-        jugadores[jugador1seleccionado].getInformacion();
+        System.out.println("El primer jugador seleccionado es el: " + jugadores[jugador1seleccionado].getInformacion());
     }
 
     public void escogerSegundoJugador(){
@@ -40,8 +39,8 @@ public class VectorJugador {
             seleccion = aleatorio.nextInt(5);
         } while (seleccion == jugador1seleccionado);
         jugador2seleccionado = seleccion;
-        System.out.print("El segundo jugador seleccionado es el: ");
-        jugadores[jugador2seleccionado].getInformacion();
+        System.out.println("El segundo jugador seleccionado es el: " + jugadores[jugador2seleccionado].getInformacion());
+        
     }
 
     public void mostrarJugadores(){

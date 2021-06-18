@@ -13,6 +13,10 @@ public class Principal {
     private Tablero tablero = new Tablero();
 
     public Principal(){
+        System.out.println("\nDamas Chinas\n");
+        jugadores.escogerPrimerJugador();
+        jugadores.escogerSegundoJugador();
+        System.out.println("");
         tablero.pintarTablero();
     }
 

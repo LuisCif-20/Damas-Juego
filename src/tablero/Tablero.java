@@ -13,24 +13,24 @@ public class Tablero {
     //Metodos
     public void pintarTablero(){
         for (int i = 0; i < tablero.length; i++) {
-            System.out.println("");
             for (int j = 0; j < tablero[i].length; j++) {
                 int par1 = j%2;
                 int par2 = i%2;
                 if (par2 == 0) {
                     if (par1 != 0) {
-                        System.out.print("\u001B[47m" +"     " + "\u001B[0m");
+                        System.out.print("\u001B[47m" +"    " + "\u001B[0m");
                     } else {
-                        System.out.print("     ");
+                        System.out.print("    ");
                     }
                 } else {
                     if (par1 == 0) {
-                        System.out.print("\u001B[47m" +"     " + "\u001B[0m");
+                        System.out.print("\u001B[47m" +"    " + "\u001B[0m");
                     } else {
-                        System.out.print("     ");
+                        System.out.print("    ");
                     }
                 }
             }
+            System.out.println("");
         }
     }
     //Getter y Setter
