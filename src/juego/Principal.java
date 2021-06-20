@@ -2,6 +2,7 @@ package src.juego;
 
 import java.util.*;
 import src.jugadores.VectorJugador;
+import src.tablero.Celda;
 import src.tablero.Tablero;
 
 public class Principal {
@@ -13,6 +14,7 @@ public class Principal {
     Scanner scanner = new Scanner(System.in);
     private VectorJugador jugadores = new VectorJugador();
     private Tablero tablero = new Tablero();
+    private Celda celda = new Celda();
 
     public Principal() {
         int menu;
@@ -30,15 +32,17 @@ public class Principal {
             if (menu == 1) {
                 System.out.println("Aun no esta disponible esta opcion");
             } else if (menu == 2) {
-                tablero.pintarTablero();
+                tablero.pintarTableroDamas();
+                //tablero.pintarTablero();
             } else if (menu == 3) {
-                tablero.pintarFichasTablero();
+                tablero.llenarTablero();
+                tablero.imprimirTablero();
             } else if (menu == 4) {
                 jugadores.mostrarJugadores();
             } else if (menu == 5) {
                 jugadores.escogerPrimerJugador();
                 jugadores.escogerSegundoJugador();
-                tablero.pintarFichasTablero();
+                tablero.llenarTablero();
             } else if (menu == 6) {
                 System.out.println("Esta opcion aun no esta lista");
             } else {

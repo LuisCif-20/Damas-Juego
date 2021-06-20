@@ -1,91 +1,107 @@
 package src.tablero;
 
 public class Tablero {
-    
-    //Atributos
+
+    // Atributos
     private String[][] tablero = new String[8][8];
+    private Celda celda = new Celda();
 
-
-    //Contructor
-    public Tablero(){
+    // Contructor
+    public Tablero() {
 
     }
-    //Metodos
-    public void pintarTablero(){
+
+    // Metodos
+
+    public void pintarTableroDamas() {
         for (int i = 0; i < tablero.length; i++) {
+            int par2 = i % 2;
+            System.out.println("");
             for (int j = 0; j < tablero[i].length; j++) {
-                int par1 = j%2;
-                int par2 = i%2;
+                int par1 = j % 2;
                 if (par2 == 0) {
                     if (par1 != 0) {
-                        System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                        System.out.print(celda.pintarCeldas(true));
                     } else {
-                        System.out.print("\u001B[41m"+"    " + "\u001B[0m");
+                        System.out.print(celda.pintarCeldas(false));
                     }
                 } else {
                     if (par1 == 0) {
-                        System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                        System.out.print(celda.pintarCeldas(true));
                     } else {
-                        System.out.print("\u001B[41m"+"    " + "\u001B[0m");
+                        System.out.print(celda.pintarCeldas(false));
                     }
                 }
             }
-            System.out.println("");
         }
     }
 
-    public void pintarFichasTablero(){
+    public void llenarTablero() {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
-                int par1 = j%2;
-                int par2 = i%2;
+                int par1 = j % 2;
+                int par2 = i % 2;
                 if (i < 2) {
                     if (par2 == 0) {
                         if (par1 != 0) {
-                            System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(true);
                         } else {
-                            System.out.print("\u001B[41m" + "\u001B[37m" + "  * " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldaFicha(true);
                         }
                     } else {
                         if (par1 == 0) {
-                            System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(true);
                         } else {
-                            System.out.print("\u001B[41m" + "\u001B[37m" + "  * " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldaFicha(true);
                         }
                     }
                 } else if (i > 5) {
                     if (par2 == 0) {
                         if (par1 != 0) {
-                            System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(true);
                         } else {
-                            System.out.print("\u001B[41m" + "\u001B[30m" + "  * " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldaFicha(false);
                         }
                     } else {
                         if (par1 == 0) {
-                            System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(true);
                         } else {
-                            System.out.print("\u001B[41m" + "\u001B[30m" + "  * " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldaFicha(false);
                         }
                     }
                 } else {
                     if (par2 == 0) {
                         if (par1 != 0) {
-                            System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(true);
                         } else {
-                            System.out.print("\u001B[41m" + "\u001B[30m" + "    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(false);
                         }
                     } else {
                         if (par1 == 0) {
-                            System.out.print("\u001B[47m" +"    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(true);
                         } else {
-                            System.out.print("\u001B[41m" + "\u001B[30m" + "    " + "\u001B[0m");
+                            tablero[i][j] = celda.pintarCeldas(false);
                         }
-                    } 
+                    }
                 }
+            }
+        }
+    }
+
+    public void imprimirTablero(){
+        System.out.print("   ");
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print(" " + i + " ");
+        }
+        System.out.println("");
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print(" " + i + " ");
+            for (int j = 0; j < tablero[i].length; j++) {
+                System.out.print(tablero[i][j]);
             }
             System.out.println("");
         }
     }
 
-    //Getter y Setter
+    // Getter y Setter
 }
