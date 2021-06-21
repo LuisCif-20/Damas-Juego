@@ -41,7 +41,7 @@ public class Tablero {
             for (int j = 0; j < tablero[i].length; j++) {
                 int par1 = j % 2;
                 int par2 = i % 2;
-                if (i < 2) {
+                if (i < 3) {
                     if (par2 == 0) {
                         if (par1 != 0) {
                             tablero[i][j] = celda.pintarCeldas(true);
@@ -55,7 +55,7 @@ public class Tablero {
                             tablero[i][j] = celda.pintarCeldaFicha(true);
                         }
                     }
-                } else if (i > 5) {
+                } else if (i > 4) {
                     if (par2 == 0) {
                         if (par1 != 0) {
                             tablero[i][j] = celda.pintarCeldas(true);
@@ -104,4 +104,20 @@ public class Tablero {
     }
 
     // Getter y Setter
+
+    public void setCambio(int columna, int fila, String cambio){
+        tablero[columna][fila] = cambio;
+    }
+
+    public String getCelda (int columna, int fila){
+        return tablero[columna][fila];
+    }
+
+    public String[][] getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(String[][] tablero) {
+        this.tablero = tablero;
+    }
 }

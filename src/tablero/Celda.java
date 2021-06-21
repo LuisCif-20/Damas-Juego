@@ -32,6 +32,14 @@ public class Celda {
         return celda;
     }
 
+    public String getCeldaAmarilla() {
+        return celdaAmarilla;
+    }
+
+    public String getCeldaBlanca() {
+        return celdaBlanca;
+    }
+
 
 
 

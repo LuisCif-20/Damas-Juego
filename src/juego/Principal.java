@@ -14,6 +14,7 @@ public class Principal {
     Scanner scanner = new Scanner(System.in);
     private VectorJugador jugadores = new VectorJugador();
     private Tablero tablero = new Tablero();
+    private Juego jugar = new Juego(tablero);
     private Celda celda = new Celda();
 
     public Principal() {
@@ -30,7 +31,12 @@ public class Principal {
             System.out.println("7) Salir\n");
             menu = Integer.parseInt(scanner.nextLine());
             if (menu == 1) {
-                System.out.println("Aun no esta disponible esta opcion");
+                jugadores.escogerPrimerJugador();
+                jugadores.escogerSegundoJugador();
+                jugadores.mostrarColores();
+                jugadores.mostrarjugadoresSeleccionados();
+                tablero.llenarTablero();
+                jugar.moverFichas();
             } else if (menu == 2) {
                 tablero.pintarTableroDamas();
                 //tablero.pintarTablero();

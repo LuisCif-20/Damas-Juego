@@ -4,12 +4,14 @@ public class Jugador {
 
     //Atributos
     private String nombre;
+    private String color;
     private int numeroJugador;
 
     //Constructor
     public Jugador( int numeroJugador, String nombre){
         this.numeroJugador = numeroJugador;
         this.nombre = nombre;
+        color = "Aun no tiene";
     }
 
 
@@ -24,7 +26,7 @@ public class Jugador {
     }
 
     public String getInformacion(){
-        return "No. " + getNumeroJugador() + " Nombre: " + getNombre();
+        return "No. " + getNumeroJugador() + " Nombre: " + getNombre() + " Color De Fichas: " + getColor();
     }
 
     public void setNombre(String nombre) {
@@ -33,5 +35,13 @@ public class Jugador {
 
     public void setNumeroJugador(int numeroJugador) {
         this.numeroJugador = numeroJugador;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }
