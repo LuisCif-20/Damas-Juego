@@ -36,7 +36,12 @@ public class Principal {
                 jugadores.mostrarColores();
                 jugadores.mostrarjugadoresSeleccionados();
                 tablero.llenarTablero();
-                jugar.moverFichas();
+                if (jugar.moverFichas() == 1) {
+                    jugadores.mostrarVictorias(jugadores.buscarBlancas());
+                } else {
+                    jugadores.mostrarVictorias(jugadores.buscarNegras());
+                }
+                jugadores.setearColores("No tiene", "No tiene");
             } else if (menu == 2) {
                 tablero.pintarTableroDamas();
                 //tablero.pintarTablero();
@@ -50,7 +55,8 @@ public class Principal {
                 jugadores.escogerSegundoJugador();
                 tablero.llenarTablero();
             } else if (menu == 6) {
-                System.out.println("Esta opcion aun no esta lista");
+                jugadores.ordenarPuntos();
+                jugadores.mostrarJugadoresVictorias();
             } else {
                 System.out.println("Hasta Pronto");
             }
